@@ -14,7 +14,6 @@ public class MainClass {
 	    System.out.println("the longest subsequence such that the difference between adjacent elements of the subsequence is on "+longestSubSequenceWithDifferenceOne(array, array.length));
 	}
 	
-	
 	/*
 	 * find the longest subsequence such that the difference between adjacent 
 	 * elements of the subsequence is one.
@@ -33,4 +32,12 @@ public class MainClass {
 					
 			}
 		}
-    }
+		
+		int result = 1;
+		for (int i = 0; i < size; i++)
+			if (result < dp[i])
+				result = dp[i];
+		
+		return result;
+	}
+}
